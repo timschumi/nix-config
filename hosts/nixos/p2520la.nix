@@ -32,6 +32,7 @@
                 roles = [
                   "android"
                   "cad"
+                  "daw"
                   "dev-cpp"
                   "dev-dotnet"
                   "dev-java"
