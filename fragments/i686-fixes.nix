@@ -37,5 +37,21 @@
         }
       );
     })
+
+    # FIXME: NixOS/nixpkgs#402739
+    (final: prev: {
+      libblake3 = prev.libblake3.overrideAttrs (
+        finalAttrs: previousAttrs: {
+          patches = [
+            # build(cmake): Use tbb32 pkgconfig package on 32-bit builds (BLAKE3-team/BLAKE3#482)
+            (final.fetchpatch {
+              url = "https://github.com/BLAKE3-team/BLAKE3/commit/dab799623310c8f4be6575002d5c681c09a0e209.patch";
+              hash = "sha256-npCtM8nOFU8Tcu//IykjMs8aLU12d93+mIfKuxHkuaQ=";
+              relative = "c";
+            })
+          ];
+        }
+      );
+    })
   ];
 }
