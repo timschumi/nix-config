@@ -358,15 +358,14 @@
     "systems": {
       "flake": false,
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-6jQXEg/fsIjplbpMYz+J1Kawi09svrNYNP2uPMtTm6s=",
-        "path": "flake.systems.nix",
+        "path": "./flake.systems.nix",
         "type": "path"
       },
       "original": {
-        "path": "flake.systems.nix",
+        "path": "./flake.systems.nix",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "treefmt-nix": {
       "inputs": {

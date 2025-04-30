@@ -67,7 +67,7 @@
     };
 
     systems = {
-      url = "path:flake.systems.nix";
+      url = "path:./flake.systems.nix";
       flake = false;
     };
 
