@@ -17,4 +17,6 @@
     man-pages-posix
   ];
   documentation.dev.enable = true;
+
+  programs.nix-ld.enable = true;
 }
