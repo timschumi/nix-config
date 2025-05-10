@@ -16,11 +16,11 @@ in
         homeDirectory = "/home/" + user;
         stateVersion = "23.11";
         packages = with pkgs; [
-          ascii
           dig.dnsutils
           dos2unix
+          iftop
+          iotop
           pwgen
-          pwntools
         ];
       };
 
