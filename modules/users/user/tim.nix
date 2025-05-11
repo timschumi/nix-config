@@ -68,6 +68,11 @@ in
       programs.home-manager = {
         enable = true;
       };
+
+      programs.tmux = {
+        enable = true;
+        historyLimit = 50000;
+      };
     };
   };
 }
