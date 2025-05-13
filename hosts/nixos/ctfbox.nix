@@ -73,6 +73,7 @@
         boot.loader.efi.canTouchEfiVariables = true;
 
         networking.hostName = "ctfbox";
+        age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIGvQ1mK6DaV7jxmKPIamHw4gTaIFyAhlDiYrt+vWr8h";
       }
     )
   ];
