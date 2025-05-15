@@ -7,8 +7,12 @@
     (import (inputs.self + "/fragments/emulate.nix") [
       "aarch64-linux"
     ])
+    (inputs.self + "/fragments/firefox.nix")
     (inputs.self + "/fragments/libvirt.nix")
-    (inputs.self + "/fragments/variant-server.nix")
+    (inputs.self + "/fragments/plasma.nix")
+    (inputs.self + "/fragments/pipewire.nix")
+    (inputs.self + "/fragments/variant-desktop.nix")
+    (inputs.self + "/fragments/yubikey.nix")
 
     (
       { ... }:
@@ -18,6 +22,18 @@
             user = {
               tim = {
                 enable = true;
+                roles = [
+                  "android"
+                  "cad"
+                  "ctf"
+                  "daw"
+                  "dev-cpp"
+                  "dev-dotnet"
+                  "dev-java"
+                  "dev-php"
+                  "dev-py"
+                  "dev-rust"
+                ];
               };
             };
           };
@@ -74,6 +90,18 @@
 
         networking.hostName = "ctfbox";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIGvQ1mK6DaV7jxmKPIamHw4gTaIFyAhlDiYrt+vWr8h";
+
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+          extraPackages = with pkgs; [
+            intel-compute-runtime
+            intel-media-driver
+          ];
+          extraPackages32 = with pkgs.pkgsi686Linux; [
+            intel-media-driver
+          ];
+        };
       }
     )
   ];
