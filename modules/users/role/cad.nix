@@ -19,6 +19,8 @@ in
       home.packages = with pkgs; [
         blender
         freecad
+        gimp
+        krita
         orca-slicer
       ];
     };
