@@ -48,9 +48,8 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFWSvBiQLNvqFY4iCzJ7scnstK872QOS5VtzuyXlXNzV tim@b550"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMVEVylmxWUFCRuBOCz0wTjwfjot649TDoH9hQIWflXZ tim@framework"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHInF0SYfQJGDv0w09UgbZv+cr1Ot2CsBn2kjFXflIY1"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFOP8+vneV/IeyBv+JmfT/GaO6RJP9sWayVSrc3paziQ tim@fajita"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIESy0Dg/XlF9nE27enyHp9l3YHMEmx0eckbnxt4iHThA"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIESy0Dg/XlF9nE27enyHp9l3YHMEmx0eckbnxt4iHThA tim@tb330fu"
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIO5h6N1XE2wls4aqdzzpnPgIq7XlPwz/xMYxHgu5tduhAAAABHNzaDo= tim@yubikey"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfiExYrWTfGtNn+2+vPYplnWgJeRLmSifc+aEgPNMJH tim@p2520la"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICdNz3Y49FW8I4nRaUUNlg1I3Nh791H+O1OASfzNJOk7 tim@fogos"
