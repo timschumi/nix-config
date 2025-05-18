@@ -12,7 +12,6 @@
         "nix-command"
         "flakes"
       ];
-      require-sigs = false;
       trusted-users = [
         "root"
         "tim"
