@@ -18,34 +18,81 @@ in
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
         aflplusplus
+        apktool
         ascii
         avalonia-ilspy
+        bettercap
         binwalk
+        bkcrack
+        burpsuite
+        bytecode-viewer
+        capstone
         checksec
+        (cutter.withPlugins (
+          p: with p; [
+            jsdec
+            rz-ghidra
+            sigdb
+          ]
+        ))
         detect-it-easy
+        dex2jar
+        ettercap
+        exiftool
+        exploitdb
         file
+        freerdp
+        frida-tools
         fuzzdb
         gdb
         ghex
         ghidra
+        hashcat
+        hashcat-utils
         honggfuzz
+        hopper
+        iaito
         ida-free
         imhex
+        insomnia
+        jadx
         lldb
+        loadlibrary
         ltrace
         minimodem
+        mitmproxy
+        nasm
+        nmap
+        ngrok
+        packer
+        payloadsallthethings
+        proxychains-ng
+        python3Packages.ropper
         radare2
         remmina
+        retdec
+        rizin
         ropgadget
         scanmem
+        seclists
+        snowman
         socat
         strace
         tcpdump
+        traceroute
         uefitool
+        udp2raw
+        udptunnel
+        upx
         valgrind
         vbindiff
         vim.xxd
+        vivisect
+        volatility2-bin
+        volatility3
         wget
+        winetricks
+        wineWowPackages.staging
         wireguard-tools
         wireshark
       ];
