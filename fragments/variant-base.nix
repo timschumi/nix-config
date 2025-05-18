@@ -13,6 +13,10 @@
         "flakes"
       ];
       require-sigs = false;
+      trusted-users = [
+        "root"
+        "tim"
+      ];
     };
     registry = {
       self.flake = inputs.self;
