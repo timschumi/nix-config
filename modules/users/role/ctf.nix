@@ -28,6 +28,7 @@ in
         bytecode-viewer
         capstone
         checksec
+        cloudflare-warp
         (cutter.withPlugins (
           p: with p; [
             jsdec
@@ -37,6 +38,7 @@ in
         ))
         detect-it-easy
         dex2jar
+        dnscrypt-proxy
         ettercap
         exiftool
         exploitdb
@@ -75,6 +77,8 @@ in
         ropgadget
         scanmem
         seclists
+        shadowsocks-rust
+        shadowsocks-v2ray-plugin
         snowman
         socat
         strace
@@ -84,6 +88,7 @@ in
         udp2raw
         udptunnel
         upx
+        v2ray
         valgrind
         vbindiff
         vim.xxd
@@ -95,6 +100,7 @@ in
         wineWowPackages.staging
         wireguard-tools
         wireshark
+        wstunnel
       ];
     };
   };
