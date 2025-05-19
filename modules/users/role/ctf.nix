@@ -28,7 +28,6 @@ in
         bytecode-viewer
         capstone
         checksec
-        cloudflare-warp
         (cutter.withPlugins (
           p: with p; [
             jsdec
@@ -71,7 +70,6 @@ in
         proxychains-ng
         python3Packages.ropper
         radare2
-        remmina
         retdec
         rizin
         ropgadget
@@ -101,6 +99,11 @@ in
         wireguard-tools
         wireshark
         wstunnel
+      ];
+
+      home.extraDependencies = with pkgs; [
+        cloudflare-warp
+        remmina
       ];
     };
   };
