@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -60,7 +61,7 @@
     home.packages = with pkgs; [
       glib.bin
       keepassxc
-      python3Full
+      (lib.meta.lowPrio python3)
       vlc
     ];
   };

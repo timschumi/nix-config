@@ -41,6 +41,7 @@ in
         ettercap
         exiftool
         exploitdb
+        ffmpeg
         file
         freerdp
         frida-tools
@@ -68,7 +69,12 @@ in
         packer
         payloadsallthethings
         proxychains-ng
-        python3Packages.ropper
+        (python3.withPackages (
+          p: with p; [
+            angr
+            ropper
+          ]
+        ))
         radare2
         retdec
         rizin
