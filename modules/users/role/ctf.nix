@@ -22,12 +22,14 @@ in
         ascii
         avalonia-ilspy
         bettercap
+        binaryninja-free
         binwalk
         bkcrack
         burpsuite
         bytecode-viewer
         capstone
         checksec
+        chromium
         (cutter.withPlugins (
           p: with p; [
             jsdec
@@ -38,10 +40,11 @@ in
         detect-it-easy
         dex2jar
         dnscrypt-proxy
+        drawio
         ettercap
         exiftool
         exploitdb
-        ffmpeg
+        ffmpeg-full
         file
         freerdp
         frida-tools
@@ -91,7 +94,9 @@ in
         uefitool
         udp2raw
         udptunnel
+        unrar
         upx
+        usbtop
         v2ray
         valgrind
         vbindiff
@@ -105,6 +110,7 @@ in
         wireguard-tools
         wireshark
         wstunnel
+        xournalpp
       ];
 
       home.extraDependencies = with pkgs; [
