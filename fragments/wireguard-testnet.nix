@@ -7,7 +7,7 @@ settings:
 }:
 {
   age.secrets.wireguard-testnet-privkey.rekeyFile =
-    inputs.self + "/secrets/original/${config.networking.hostName}-wireguard-testnet-privkey.age";
+    inputs.self + "/secrets/original/wireguard-testnet-${config.networking.hostName}-privkey.age";
 
   networking.firewall.allowedUDPPorts = [ 51820 ];
   networking.wireguard.interfaces.testnet =
