@@ -92,6 +92,7 @@
         swapDevices = [ ];
 
         nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+        nix.settings.extra-system-features = [ "gccarch-znver3" ];
         hardware.cpu.amd.updateMicrocode = true;
 
         boot.loader.systemd-boot.enable = true;
