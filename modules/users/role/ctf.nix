@@ -46,6 +46,7 @@ in
         exploitdb
         ffmpeg-full
         file
+        flashrom
         freerdp
         frida-tools
         fuzzdb
