@@ -39,8 +39,10 @@ in
         ))
         detect-it-easy
         dex2jar
+        dig
         dnscrypt-proxy
         drawio
+        elfutils
         ettercap
         exiftool
         exploitdb
@@ -59,9 +61,11 @@ in
         hopper
         iaito
         ida-free
+        imagemagick
         imhex
         insomnia
         jadx
+        jq
         lldb
         loadlibrary
         ltrace
@@ -106,12 +110,14 @@ in
         volatility2-bin
         volatility3
         wget
+        whois
         winetricks
         wineWowPackages.staging
         wireguard-tools
         wireshark
         wstunnel
         xournalpp
+        yt-dlp
       ];
 
       home.extraDependencies = with pkgs; [
