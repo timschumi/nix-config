@@ -6,6 +6,7 @@
 
   networking = {
     firewall.enable = true;
+    firewall.rejectPackets = false;
   };
 
   services.openssh = {

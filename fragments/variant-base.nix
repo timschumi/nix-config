@@ -24,6 +24,10 @@
   };
   system.rebuild.enableNg = true;
   networking.nftables.enable = true;
+  networking.firewall = {
+    logRefusedConnections = false;
+    logRefusedPackets = false;
+  };
 
   nixpkgs.config.allowUnfree = true;
   hardware.enableRedistributableFirmware = true;

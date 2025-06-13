@@ -14,7 +14,18 @@ let
   inherit (inputs.nixpkgs.lib) mkIf;
 in
 {
+  imports = [
+    (inputs.self + "/fragments/overlay-binaryninja-personal.nix")
+  ];
+
   config = mkIf (elem role config.extra.user."${user}".roles) {
+    age.secrets = {
+      binaryninja-license = {
+        rekeyFile = inputs.self + "/secrets/original/binaryninja-license.age";
+        owner = user;
+      };
+    };
+
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
         aflplusplus
@@ -22,7 +33,7 @@ in
         ascii
         avalonia-ilspy
         bettercap
-        binaryninja-free
+        binaryninja-personal
         binwalk
         bkcrack
         burpsuite
@@ -121,6 +132,7 @@ in
       ];
 
       home.extraDependencies = with pkgs; [
+        binaryninja-free
         cloudflare-warp
         remmina
       ];
