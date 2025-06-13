@@ -16,6 +16,7 @@ in
 {
   imports = [
     (inputs.self + "/fragments/overlay-binaryninja-personal.nix")
+    (inputs.self + "/fragments/overlay-ghidra-firmware-utils.nix")
   ];
 
   config = mkIf (elem role config.extra.user."${user}".roles) {
@@ -65,7 +66,18 @@ in
         fuzzdb
         gdb
         ghex
-        ghidra
+        (ghidra.withExtensions (
+          p: with p; [
+            findcrypt
+            ghidra-delinker-extension
+            ghidra-firmware-utils
+            ghidra-golanganalyzerextension
+            ghidraninja-ghidra-scripts
+            kaiju
+            ret-sync
+            wasm
+          ]
+        ))
         hashcat
         hashcat-utils
         honggfuzz
