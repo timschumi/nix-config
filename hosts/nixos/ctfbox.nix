@@ -6,6 +6,8 @@
     (inputs.self + "/fragments/docker.nix")
     (import (inputs.self + "/fragments/emulate.nix") [
       "aarch64-linux"
+      "armv7l-linux"
+      "x86_64-windows"
     ])
     (inputs.self + "/fragments/firefox.nix")
     (inputs.self + "/fragments/libvirt.nix")
