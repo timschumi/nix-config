@@ -34,6 +34,7 @@
                 roles = [
                   "android"
                   "dev-dotnet"
+                  "hwtest"
                 ];
               };
             };

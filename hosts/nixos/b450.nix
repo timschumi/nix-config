@@ -18,6 +18,9 @@
             user = {
               tim = {
                 enable = true;
+                roles = [
+                  "hwtest"
+                ];
               };
             };
           };

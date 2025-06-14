@@ -35,6 +35,7 @@
                   "dev-php"
                   "dev-py"
                   "dev-rust"
+                  "hwtest"
                 ];
               };
             };
