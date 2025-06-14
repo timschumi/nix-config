@@ -2,7 +2,6 @@
 {
   system = "i686-linux";
   modules = [
-    (inputs.self + "/fragments/i686-fixes.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
 
     (
