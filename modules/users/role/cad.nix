@@ -20,6 +20,7 @@ in
         blender
         freecad
         gimp
+        kicad
         krita
         orca-slicer
       ];
