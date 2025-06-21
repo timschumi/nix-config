@@ -35,6 +35,7 @@
                   "android"
                   "dev-dotnet"
                   "hwtest"
+                  "rip"
                 ];
               };
             };

@@ -16,6 +16,9 @@
             user = {
               tim = {
                 enable = true;
+                roles = [
+                  "rip"
+                ];
               };
             };
           };

@@ -16,6 +16,7 @@ in
 {
   imports = [
     (inputs.self + "/fragments/overlay-binaryninja-personal.nix")
+    (inputs.self + "/fragments/overlay-delsum.nix")
     (inputs.self + "/fragments/overlay-ghidra-firmware-utils.nix")
   ];
 
@@ -36,6 +37,7 @@ in
         bettercap
         binaryninja-personal
         binwalk
+        biodiff
         bkcrack
         burpsuite
         bytecode-viewer
@@ -49,6 +51,7 @@ in
             sigdb
           ]
         ))
+        delsum
         detect-it-easy
         dex2jar
         dig
@@ -82,6 +85,7 @@ in
         hashcat-utils
         honggfuzz
         hopper
+        httptunnel
         iaito
         ida-free
         imagemagick
@@ -114,6 +118,7 @@ in
         seclists
         shadowsocks-rust
         shadowsocks-v2ray-plugin
+        sleuthkit
         snowman
         socat
         strace

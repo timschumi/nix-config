@@ -20,6 +20,7 @@
                 enable = true;
                 roles = [
                   "hwtest"
+                  "rip"
                 ];
               };
             };
