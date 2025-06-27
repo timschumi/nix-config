@@ -18,7 +18,8 @@ in
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
         audacity
-        lmms
+        # FIXME: python313Packages.pyliblo: switch to pyliblo3 fork (#418925)
+        #lmms
         furnace
       ];
     };

@@ -9,12 +9,12 @@
       binaryninja-personal = final.binaryninja-free.overrideAttrs (
         finalAttrs: previousAttrs: rec {
           pname = "binaryninja-personal";
-          version = "5.0.7486";
+          version = "5.0.7648";
 
           src = final.requireFile {
             name = "binaryninja_linux_${version}_personal.zip";
             url = "https://portal.binary.ninja";
-            hash = "sha256-ekxUSb9RDo3JrBy0oB7TJs0ZicO2zuf84HWOtVAMUrs=";
+            hash = "sha256-5F/L1S+a+uGHnL9FAml2tV4AAgEIDJ99PG3NET+Mc9o=";
           };
 
           # PySide6 depends on the Qt6 libraries in the main directory,
