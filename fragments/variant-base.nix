@@ -6,6 +6,9 @@
   ...
 }:
 {
+  imports = [
+    (inputs.self + "/fragments/overlay-shtab.nix")
+  ];
   nix = {
     settings = {
       experimental-features = [
