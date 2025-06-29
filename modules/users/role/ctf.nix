@@ -110,6 +110,7 @@ in
           p: with p; [
             angr
             ropper
+            standard-telnetlib
           ]
         ))
         radare2
