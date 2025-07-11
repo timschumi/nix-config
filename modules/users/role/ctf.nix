@@ -45,6 +45,7 @@ in
         capstone
         checksec
         chromium
+        coreboot-utils
         (cutter.withPlugins (
           p: with p; [
             jsdec
@@ -103,6 +104,7 @@ in
         nmap
         ngrok
         packer
+        pahole
         payloadsallthethings
         proxychains-ng
         (python3.withPackages (
