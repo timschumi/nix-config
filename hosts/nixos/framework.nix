@@ -112,6 +112,13 @@
             intel-media-driver
           ];
         };
+
+        nix = {
+          settings = {
+            cores = 4;
+            max-jobs = 2;
+          };
+        };
       }
     )
   ];
