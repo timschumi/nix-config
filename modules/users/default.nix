@@ -19,26 +19,25 @@ let
   roles = enumerateNixFiles ./role;
 in
 {
-  imports =
-    [
-      inputs.home-manager.nixosModules.home-manager
-    ]
-    ++ concatLists (
-      mapAttrsToList (
-        user: userpath:
-        [
-          (import userpath {
-            inherit user;
-          })
-        ]
-        ++ mapAttrsToList (
-          role: rolepath:
-          import rolepath {
-            inherit role user;
-          }
-        ) roles
-      ) users
-    );
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ]
+  ++ concatLists (
+    mapAttrsToList (
+      user: userpath:
+      [
+        (import userpath {
+          inherit user;
+        })
+      ]
+      ++ mapAttrsToList (
+        role: rolepath:
+        import rolepath {
+          inherit role user;
+        }
+      ) roles
+    ) users
+  );
 
   options.extra.user = foldl' (a: b: a // b) { } (
     map (user: {

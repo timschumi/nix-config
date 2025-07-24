@@ -38,13 +38,12 @@ in
   config = mkIf config.extra.services.watchtower.enable {
     virtualisation.oci-containers.containers."watchtower-nix" = {
       image = "docker.io/containrrr/watchtower:latest";
-      volumes =
-        [
-          "/var/run/docker.sock:/var/run/docker.sock:rw"
-        ]
-        ++ optionals (cfg.config != null) [
-          "${cfg.config}:/config.json:ro"
-        ];
+      volumes = [
+        "/var/run/docker.sock:/var/run/docker.sock:rw"
+      ]
+      ++ optionals (cfg.config != null) [
+        "${cfg.config}:/config.json:ro"
+      ];
       log-driver = "journald";
       cmd = [
         "--scope"
@@ -58,13 +57,12 @@ in
 
     virtualisation.oci-containers.containers."watchtower-unscoped" = {
       image = "docker.io/containrrr/watchtower:latest";
-      volumes =
-        [
-          "/var/run/docker.sock:/var/run/docker.sock:rw"
-        ]
-        ++ optionals (cfg.config != null) [
-          "${cfg.config}:/config.json:ro"
-        ];
+      volumes = [
+        "/var/run/docker.sock:/var/run/docker.sock:rw"
+      ]
+      ++ optionals (cfg.config != null) [
+        "${cfg.config}:/config.json:ro"
+      ];
       log-driver = "journald";
       cmd = [
         "--scope"
