@@ -17,7 +17,8 @@ in
   config = mkIf (elem role config.extra.user."${user}".roles) {
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
-        jetbrains.pycharm-professional
+        # FIXME: jetbrains-jdk: fix with structured attrs (#425529)
+        #jetbrains.pycharm-professional
       ];
     };
   };

@@ -16,7 +16,6 @@ in
 {
   imports = [
     (inputs.self + "/fragments/overlay-binaryninja-personal.nix")
-    (inputs.self + "/fragments/overlay-ghidra-firmware-utils.nix")
     (inputs.self + "/fragments/overlay-hopper.nix")
     (inputs.self + "/fragments/overlay-nampa.nix")
   ];
