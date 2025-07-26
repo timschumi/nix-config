@@ -7,12 +7,11 @@
   nixpkgs.overlays = [
     (final: prev: {
       binaryninja-personal = final.binaryninja-free.overrideAttrs (
-        finalAttrs: previousAttrs: rec {
+        finalAttrs: previousAttrs: {
           pname = "binaryninja-personal";
-          version = "5.0.7648";
 
           src = final.requireFile {
-            name = "binaryninja_linux_${version}_personal.zip";
+            name = "binaryninja_linux_${finalAttrs.version}_personal.zip";
             url = "https://portal.binary.ninja";
             hash = "sha256-5F/L1S+a+uGHnL9FAml2tV4AAgEIDJ99PG3NET+Mc9o=";
           };
