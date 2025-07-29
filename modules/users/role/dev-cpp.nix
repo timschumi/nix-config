@@ -17,8 +17,7 @@ in
   config = mkIf (elem role config.extra.user."${user}".roles) {
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
-        # FIXME: jetbrains-jdk: fix with structured attrs (#425529)
-        #jetbrains.clion
+        jetbrains.clion
         clang
         clang-tools
         pkg-config

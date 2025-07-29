@@ -14,6 +14,10 @@ let
   inherit (inputs.nixpkgs.lib) mkIf;
 in
 {
+  imports = [
+    (inputs.self + "/fragments/overlay-audacity.nix")
+  ];
+
   config = mkIf (elem role config.extra.user."${user}".roles) {
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
