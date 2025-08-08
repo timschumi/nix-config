@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   ...
 }:
 {
@@ -13,8 +14,12 @@
           src = final.requireFile {
             name = "binaryninja_linux_${finalAttrs.version}_personal.zip";
             url = "https://portal.binary.ninja";
-            hash = "sha256-5F/L1S+a+uGHnL9FAml2tV4AAgEIDJ99PG3NET+Mc9o=";
+            hash = "sha256-8uSy5pd8iVoihcicpmbJ4ZNJYwyolgv93VxGb/GZ6i8=";
           };
+
+          buildInputs = previousAttrs.buildInputs ++ [
+            pkgs.openssl
+          ];
 
           # PySide6 depends on the Qt6 libraries in the main directory,
           # but auto-patchelf does not consider them due to the working directory.
