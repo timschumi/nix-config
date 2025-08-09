@@ -24,6 +24,9 @@ in
         ];
       };
 
+      xdg.userDirs = {
+        enable = true;
+      };
       xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
       programs.bash = {
