@@ -6,9 +6,10 @@
   # TODO: Find a better place for overlays.
   nixpkgs.overlays = [
     (final: prev: {
+      # FIXME: mtkclient: init at 0-unstable-2025-06-08 (#432318)
       mtkclient = final.python3Packages.buildPythonApplication rec {
         pname = "mtkclient";
-        version = "2.0.2-unstable-2025-06-08";
+        version = "0-unstable-2025-06-08";
         pyproject = true;
 
         src = final.fetchFromGitHub {

@@ -36,8 +36,6 @@
     # FIXME: Required by msbuild (#326335).
     "dotnet-runtime-6.0.36"
     "dotnet-sdk-6.0.428"
-    # FIXME: Required by orca-slicer (via webkitgtk).
-    "libsoup-2.74.3"
   ];
   nixpkgs.config.allowUnfree = true;
   hardware.enableRedistributableFirmware = true;
