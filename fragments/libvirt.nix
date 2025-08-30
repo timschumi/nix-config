@@ -7,10 +7,7 @@
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
-      package = pkgs.qemu_full.override {
-        # FIXME: ceph: fix build with arrow 20 (#426609)
-        cephSupport = false;
-      };
+      package = pkgs.qemu_full;
       runAsRoot = true;
       swtpm.enable = true;
       ovmf = {

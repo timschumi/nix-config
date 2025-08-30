@@ -18,7 +18,8 @@ in
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
         audacity
-        lmms
+        # FIXME: Build failure: python3.13-pyliblo3 (#437077)
+        #lmms
         furnace
       ];
     };

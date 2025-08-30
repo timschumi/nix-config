@@ -6,9 +6,6 @@
   ...
 }:
 {
-  imports = [
-    (inputs.self + "/fragments/overlay-shtab.nix")
-  ];
   nix = {
     settings = {
       experimental-features = [
@@ -33,9 +30,8 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    # FIXME: Required by msbuild (#326335).
-    "dotnet-runtime-6.0.36"
-    "dotnet-sdk-6.0.428"
+    # FIXME: Required by vivisect.
+    "qtwebengine-5.15.19"
   ];
   nixpkgs.config.allowUnfree = true;
   hardware.enableRedistributableFirmware = true;
@@ -79,8 +75,8 @@
   services.openssh.enable = true;
 
   services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
+    settings.Login.HandleLidSwitch = "ignore";
+    settings.Login.HandleLidSwitchDocked = "ignore";
   };
 
   services.cron = {
