@@ -72,6 +72,13 @@
 
         networking.hostName = "ah532";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKAXFQ6z0tPKf6Fl3qefUHChp3i+xNDpQlwsRGjaPTxW";
+
+        nix = {
+          settings = {
+            cores = 2;
+            max-jobs = 2;
+          };
+        };
       }
     )
   ];

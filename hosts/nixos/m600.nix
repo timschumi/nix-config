@@ -67,6 +67,13 @@
 
         networking.hostName = "m600";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGv/5pQ4z++nvLthWCrctYvRZ71smenYgQF/ixJDvPBG";
+
+        nix = {
+          settings = {
+            cores = 2;
+            max-jobs = 2;
+          };
+        };
       }
     )
   ];

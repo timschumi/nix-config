@@ -114,6 +114,13 @@
           extraPackages32 = with pkgs.pkgsi686Linux; [
           ];
         };
+
+        nix = {
+          settings = {
+            cores = 4;
+            max-jobs = 4;
+          };
+        };
       }
     )
   ];

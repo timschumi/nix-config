@@ -65,6 +65,13 @@
         boot.loader.grub.device = "/dev/sda";
 
         networking.hostName = "d800jr";
+
+        nix = {
+          settings = {
+            cores = 1;
+            max-jobs = 1;
+          };
+        };
       }
     )
   ];

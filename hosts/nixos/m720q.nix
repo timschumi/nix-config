@@ -71,6 +71,13 @@
 
         networking.hostName = "m720q";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJsrXHfPy8biXpDJBwSt9dXpIC/c+q3SeYI6ewRYZsA";
+
+        nix = {
+          settings = {
+            cores = 2;
+            max-jobs = 2;
+          };
+        };
       }
     )
   ];
