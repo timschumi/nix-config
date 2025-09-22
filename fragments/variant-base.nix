@@ -83,5 +83,9 @@
     enable = true;
   };
 
+  systemd.tmpfiles.rules = [
+    "q /var/ntmp 1777 root root"
+  ];
+
   system.stateVersion = "23.11";
 }
