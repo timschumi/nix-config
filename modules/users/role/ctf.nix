@@ -53,6 +53,7 @@ in
         delsum
         detect-it-easy
         dex2jar
+        diffoscope
         dig
         dnscrypt-proxy
         drawio
