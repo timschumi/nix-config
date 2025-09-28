@@ -60,6 +60,7 @@ in
         exiftool
         exploitdb
         ffmpeg-full
+        file
         flashrom
         freerdp
         frida-tools
@@ -159,8 +160,6 @@ in
           chromium
           # Something, something, "heat death of the universe" (via electron).
           drawio
-          # Conflicts with itself for whatever reason.
-          file
         ]
       );
 
