@@ -12,6 +12,7 @@
 let
   inherit (builtins) elem;
   inherit (inputs.nixpkgs.lib) mkIf;
+  inherit (inputs.nixpkgs.lib.lists) optionals;
 in
 {
   imports = [
@@ -41,7 +42,6 @@ in
         bytecode-viewer
         capstone
         checksec
-        chromium
         coreboot-utils
         (cutter.withPlugins (
           p: with p; [
@@ -55,13 +55,11 @@ in
         dex2jar
         dig
         dnscrypt-proxy
-        drawio
         elfutils
         ettercap
         exiftool
         exploitdb
         ffmpeg-full
-        file
         flashrom
         freerdp
         frida-tools
@@ -74,11 +72,17 @@ in
             ghidra-delinker-extension
             ghidra-firmware-utils
             ghidra-golanganalyzerextension
-            ghidraninja-ghidra-scripts
             kaiju
             ret-sync
             wasm
           ]
+          ++ optionals (!config.nixpkgs.config.contentAddressedByDefault) (
+            with p;
+            [
+              # Something, something, "heat death of the universe" (via swift).
+              ghidraninja-ghidra-scripts
+            ]
+          )
         ))
         hashcat
         hashcat-utils
@@ -147,7 +151,18 @@ in
         wstunnel
         xournalpp
         yt-dlp
-      ];
+      ]
+      ++ optionals (!config.nixpkgs.config.contentAddressedByDefault) (
+        with pkgs;
+        [
+          # Something, something, "heat death of the universe".
+          chromium
+          # Something, something, "heat death of the universe" (via electron).
+          drawio
+          # Conflicts with itself for whatever reason.
+          file
+        ]
+      );
 
       home.extraDependencies = with pkgs; [
         binaryninja-free
