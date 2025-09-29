@@ -34,6 +34,8 @@
     "qtwebengine-5.15.19"
   ];
   nixpkgs.config.allowUnfree = true;
+  # This gets enabled on a target-by-target basis.
+  nixpkgs.config.contentAddressedByDefault = false;
   hardware.enableRedistributableFirmware = true;
 
   time.timeZone = "Europe/Berlin";
