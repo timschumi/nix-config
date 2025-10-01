@@ -86,7 +86,8 @@
         swapDevices = [ ];
 
         nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-        nixpkgs.config.contentAddressedByDefault = true;
+        # Disabled until we can get the closure size down and make rebuilds more consistent.
+        nixpkgs.config.contentAddressedByDefault = false;
         hardware.cpu.intel.updateMicrocode = true;
 
         boot.loader.systemd-boot.enable = true;
