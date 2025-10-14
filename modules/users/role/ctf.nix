@@ -117,7 +117,8 @@ in
           ]
         ))
         radare2
-        retdec
+        # CMake 3.5 failure
+        #retdec
         rizin
         ropgadget
         scanmem
@@ -125,7 +126,6 @@ in
         shadowsocks-rust
         shadowsocks-v2ray-plugin
         sleuthkit
-        snowman
         socat
         strace
         tcpdump
