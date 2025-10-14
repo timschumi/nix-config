@@ -78,8 +78,7 @@ in
       };
 
       programs.tmux = {
-        # FIXME: Building tmux is broken on i686.
-        enable = !pkgs.stdenv.hostPlatform.isi686;
+        enable = true;
         historyLimit = 50000;
       };
     };
