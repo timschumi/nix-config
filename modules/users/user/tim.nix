@@ -58,15 +58,19 @@ in
       programs.git = {
         enable = true;
         lfs.enable = true;
-        userName = "Tim Schumacher";
-        userEmail = "timschumi@gmx.de";
-        aliases.c = "commit --verbose";
-        aliases.ca = "c --amend";
-        aliases.cad = "ca --date=now";
-        aliases.graph = "log --oneline --graph";
-        aliases.cu = "!env GIT_COMMITTER_DATE=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" git commit --verbose --date=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\"";
-        aliases.cau = "!env GIT_COMMITTER_DATE=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" git commit --verbose --date=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" --amend";
-        extraConfig = {
+        settings = {
+          user = {
+            name = "Tim Schumacher";
+            email = "timschumi@gmx.de";
+          };
+          alias = {
+            c = "commit --verbose";
+            ca = "c --amend";
+            cad = "ca --date=now";
+            graph = "log --oneline --graph";
+            cu = "!env GIT_COMMITTER_DATE=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" git commit --verbose --date=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\"";
+            cau = "!env GIT_COMMITTER_DATE=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" git commit --verbose --date=\\\"$(date --utc +%Y-%m-%dT%H:%M:%S%z)\\\" --amend";
+          };
           color = {
             ui = "auto";
           };
