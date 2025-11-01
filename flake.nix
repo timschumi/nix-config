@@ -14,6 +14,8 @@
     agenix-rekey = {
       url = "github:oddlama/agenix-rekey";
       inputs = {
+        devshell.follows = "devshell";
+        flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
       };
@@ -24,6 +26,10 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
+    };
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
     };
 
     flake-utils = {
@@ -54,6 +60,7 @@
     nur = {
       url = "github:nix-community/NUR";
       inputs = {
+        flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
     };
