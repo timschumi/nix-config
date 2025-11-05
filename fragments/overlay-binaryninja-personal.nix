@@ -14,7 +14,7 @@
           src = final.requireFile {
             name = "binaryninja_linux_${finalAttrs.version}_personal.zip";
             url = "https://portal.binary.ninja";
-            hash = "sha256-8uSy5pd8iVoihcicpmbJ4ZNJYwyolgv93VxGb/GZ6i8=";
+            hash = "sha256-BL7WnJgvCLbe4CeqyVQWrwbJPlJOdhcaUhfCmJBlXjc=";
           };
 
           buildInputs = previousAttrs.buildInputs ++ [
