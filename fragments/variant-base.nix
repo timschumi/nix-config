@@ -85,5 +85,8 @@
     "q /var/ntmp 1777 root root"
   ];
 
+  boot.loader.systemd-boot.memtest86.enable = true;
+  boot.loader.grub.memtest86.enable = true;
+
   system.stateVersion = "23.11";
 }
