@@ -85,7 +85,8 @@ in
               with p;
               [
                 # Something, something, "heat death of the universe" (via swift).
-                ghidraninja-ghidra-scripts
+                # FIXME: Currently broken via swift.
+                #ghidraninja-ghidra-scripts
               ]
             )
           ))
@@ -144,7 +145,6 @@ in
           valgrind
           vbindiff
           vim.xxd
-          vivisect
           volatility2-bin
           volatility3
           wget

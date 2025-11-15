@@ -127,6 +127,7 @@
                 configurationBase.modules
                 ++ [
                   ./modules
+                  ./fragments/overlay-fixes.nix
                 ]
                 ++ (if output != null then [ output.value ] else [ ]);
             };

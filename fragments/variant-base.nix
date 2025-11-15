@@ -29,10 +29,6 @@
     logRefusedPackets = false;
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    # FIXME: Required by vivisect.
-    "qtwebengine-5.15.19"
-  ];
   nixpkgs.config.allowUnfree = true;
   # This gets enabled on a target-by-target basis.
   nixpkgs.config.contentAddressedByDefault = false;
