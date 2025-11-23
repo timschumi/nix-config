@@ -107,6 +107,9 @@
         };
         hosts = self.lib.enumerateNixFiles ./hosts/nixos;
         outputs = self.lib.enumerateNixFiles ./outputs;
+        overlays = builtins.concatMap import (
+          nixpkgs.lib.attrValues (self.lib.enumerateNixFiles ./overlay)
+        );
         loadHost =
           hostpath:
           nixpkgs.lib.attrsets.recursiveUpdate commonSettings (import hostpath commonSettings.specialArgs);
@@ -127,6 +130,10 @@
                 configurationBase.modules
                 ++ [
                   ./modules
+
+                  {
+                    nixpkgs.overlays = overlays;
+                  }
                 ]
                 ++ (if output != null then [ output.value ] else [ ]);
             };

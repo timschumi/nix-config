@@ -15,10 +15,6 @@ let
   inherit (inputs.nixpkgs.lib.lists) optionals;
 in
 {
-  imports = [
-    (inputs.self + "/fragments/overlay-binaryninja-personal.nix")
-  ];
-
   config = mkIf (elem role config.extra.user."${user}".roles) {
     age.secrets = {
       binaryninja-license = {
