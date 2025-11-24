@@ -9,10 +9,16 @@
       gcc-unwrapped
       git-lfs
       git-repo
+      glslang
       m4
       pkg-config
       pkgconf
-      python3
+      (python3.withPackages (
+        p: with p; [
+          mako
+          meson
+        ]
+      ))
       qemu-utils
       unzip
       zip
