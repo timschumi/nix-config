@@ -10,7 +10,9 @@
       git-lfs
       git-repo
       m4
+      pkgconf
       python3
+      qemu-utils
       unzip
       zip
     ]);
