@@ -15,8 +15,10 @@
       pkgconf
       (python3.withPackages (
         p: with p; [
+          distutils
           mako
           meson
+          packaging
         ]
       ))
       qemu-utils
