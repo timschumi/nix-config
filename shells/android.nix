@@ -10,6 +10,7 @@
       git-lfs
       git-repo
       m4
+      pkg-config
       pkgconf
       python3
       qemu-utils
