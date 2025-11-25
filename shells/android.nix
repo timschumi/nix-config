@@ -4,13 +4,17 @@
   targetPkgs =
     pkgs:
     (with pkgs; [
+      binutils
+      byacc
       ccache
+      flex
       fontconfig
       gcc-unwrapped
       git-lfs
       git-repo
       glslang
       m4
+      ninja
       pkg-config
       pkgconf
       (python3.withPackages (
@@ -19,6 +23,7 @@
           mako
           meson
           packaging
+          pyyaml
         ]
       ))
       qemu-utils
