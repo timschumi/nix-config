@@ -49,7 +49,6 @@ in
             ]
           ))
           delsum
-          detect-it-easy
           dex2jar
           diffoscope
           dig
@@ -168,6 +167,7 @@ in
       home.extraDependencies = with pkgs; [
         binaryninja-free
         cloudflare-warp
+        detect-it-easy
         remmina
       ];
     };
