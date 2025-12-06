@@ -20,9 +20,12 @@ in
         cdparanoia
         ffmpeg-full
         freac
-        handbrake
         makemkv
         picard
+      ];
+
+      home.extraDependencies = with pkgs; [
+        handbrake
       ];
     };
   };
