@@ -106,42 +106,30 @@
           };
         };
         hosts = self.lib.enumerateNixFiles ./hosts/nixos;
-        outputs = self.lib.enumerateNixFiles ./outputs;
         overlays = builtins.concatMap import (
           nixpkgs.lib.attrValues (self.lib.enumerateNixFiles ./overlay)
         );
         loadHost =
           hostpath:
           nixpkgs.lib.attrsets.recursiveUpdate commonSettings (import hostpath commonSettings.specialArgs);
-        cartesian = nixpkgs.lib.attrsets.cartesianProduct {
-          host = nixpkgs.lib.attrsToList hosts;
-          output = [ null ] ++ nixpkgs.lib.attrsToList outputs;
-        };
-        assemble =
-          {
-            host,
-            output,
-          }:
+        applyInnerSettings =
+          _: path:
           let
-            configurationName = host.name + (if output != null then "+${output.name}" else "");
-            configurationBase = loadHost host.value;
+            configurationBase = loadHost path;
             configuration = configurationBase // {
-              modules =
-                configurationBase.modules
-                ++ [
-                  ./modules
+              modules = configurationBase.modules ++ [
+                ./modules
 
-                  {
-                    nixpkgs.overlays = overlays;
-                  }
-                ]
-                ++ (if output != null then [ output.value ] else [ ]);
+                {
+                  nixpkgs.overlays = overlays;
+                }
+              ];
             };
           in
-          nixpkgs.lib.nameValuePair configurationName (nixpkgs.lib.nixosSystem configuration);
+          nixpkgs.lib.nixosSystem configuration;
       in
       {
-        nixosConfigurations = nixpkgs.lib.listToAttrs (map assemble cartesian);
+        nixosConfigurations = nixpkgs.lib.mapAttrs applyInnerSettings hosts;
       }
     )
     # Add all global devshells.
