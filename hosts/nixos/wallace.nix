@@ -3,10 +3,10 @@
   system = "x86_64-linux";
   modules = [
     (inputs.self + "/fragments/comma.nix")
+    (inputs.self + "/fragments/firefox.nix")
+    (inputs.self + "/fragments/plasma.nix")
+    (inputs.self + "/fragments/pipewire.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
-    (import (inputs.self + "/fragments/wireguard-testnet.nix") {
-      ip = "10.130.21.2/24";
-    })
 
     (
       { ... }:
@@ -16,6 +16,9 @@
             user = {
               tim = {
                 enable = true;
+                roles = [
+                  "hwtest"
+                ];
               };
             };
           };
@@ -69,8 +72,20 @@
         boot.loader.systemd-boot.enable = true;
         boot.loader.efi.canTouchEfiVariables = true;
 
-        networking.hostName = "m720q";
+        networking.hostName = "wallace";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJsrXHfPy8biXpDJBwSt9dXpIC/c+q3SeYI6ewRYZsA";
+
+        hardware.graphics = {
+          enable = true;
+          enable32Bit = true;
+          extraPackages = with pkgs; [
+            intel-compute-runtime
+            intel-media-driver
+          ];
+          extraPackages32 = with pkgs.pkgsi686Linux; [
+            intel-media-driver
+          ];
+        };
 
         nix = {
           settings = {
