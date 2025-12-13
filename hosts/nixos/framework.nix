@@ -74,6 +74,10 @@
         ];
         boot.initrd.kernelModules = [ ];
         boot.kernelModules = [ "kvm-intel" ];
+        boot.kernelParams = [
+          # memmap=0x8$0x20a455b38,0x8$0x60a475b38
+          "memmap=1M$0x20a400000,1M$0x60a400000"
+        ];
         boot.extraModulePackages = [ ];
 
         fileSystems."/" = {
