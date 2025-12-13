@@ -181,7 +181,7 @@
       {
         formatter = treefmt.config.build.wrapper;
         checks = {
-          formatting = treefmt.config.build.check;
+          formatting = treefmt.config.build.check self;
         };
       }
     ))
