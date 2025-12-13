@@ -133,6 +133,7 @@ in
           uefitool
           udp2raw
           udptunnel
+          udp-over-tcp
           unrar
           upx
           usbtop
