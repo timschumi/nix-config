@@ -22,7 +22,6 @@
       self.flake = inputs.self;
     };
   };
-  system.rebuild.enableNg = true;
   networking.nftables.enable = true;
   networking.firewall = {
     logRefusedConnections = false;
