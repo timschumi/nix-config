@@ -112,6 +112,7 @@ in
           (python3.withPackages (
             p: with p; [
               angr
+              angr-management
               ropper
               standard-telnetlib
             ]
