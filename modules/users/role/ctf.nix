@@ -28,6 +28,7 @@ in
         with pkgs;
         [
           aflplusplus
+          angr-management
           apktool
           ascii
           avalonia-ilspy
@@ -112,7 +113,6 @@ in
           (python3.withPackages (
             p: with p; [
               angr
-              angr-management
               ropper
               standard-telnetlib
             ]
