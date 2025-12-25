@@ -17,7 +17,7 @@ in
   config = mkIf (elem role config.extra.user."${user}".roles) {
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
-        jetbrains.idea-ultimate
+        jetbrains.idea
       ];
     };
   };
