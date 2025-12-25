@@ -23,6 +23,7 @@ settings:
       )
       {
         listenPort = 51820;
+        mtu = 1280;
         privateKeyFile = config.age.secrets.wireguard-testnet-privkey.path;
         peers = [
           {
