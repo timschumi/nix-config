@@ -66,30 +66,22 @@ in
           gdb
           ghex
           (ghidra.withExtensions (
-            p:
-            with p;
-            [
+            p: with p; [
               findcrypt
               ghidra-delinker-extension
               ghidra-firmware-utils
               ghidra-golanganalyzerextension
+              ghidraninja-ghidra-scripts
               kaiju
               ret-sync
               wasm
             ]
-            ++ optionals (!config.nixpkgs.config.contentAddressedByDefault) (
-              with p;
-              [
-                # Something, something, "heat death of the universe" (via swift).
-                # FIXME: Currently broken via swift.
-                #ghidraninja-ghidra-scripts
-              ]
-            )
           ))
           hashcat
           hashcat-utils
           honggfuzz
-          hopper
+          # FIXME: libffi is broken
+          #hopper
           httptunnel
           iaito
           ida-free
