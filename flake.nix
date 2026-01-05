@@ -73,6 +73,14 @@
       };
     };
 
+    serenity = {
+      url = "github:SerenityOS/serenity/master";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        utils.follows = "flake-utils";
+      };
+    };
+
     systems = {
       url = "path:./flake.systems.nix";
       flake = false;
@@ -139,6 +147,7 @@
         loadShell =
           shellpath: system:
           import shellpath {
+            inherit inputs;
             pkgs = import nixpkgs {
               inherit system;
               overlays = [

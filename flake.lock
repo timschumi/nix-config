@@ -327,8 +327,33 @@
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "plasma-manager": "plasma-manager",
+        "serenity": "serenity",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
+      }
+    },
+    "serenity": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767646665,
+        "narHash": "sha256-TlVheWM5JWk1qY6hFHaLQj+zx+LFhNO1shyVHXnXpkM=",
+        "owner": "SerenityOS",
+        "repo": "serenity",
+        "rev": "d58a66717904a01a49e1a6e41b89db34c628f4cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SerenityOS",
+        "ref": "master",
+        "repo": "serenity",
+        "type": "github"
       }
     },
     "systems": {
