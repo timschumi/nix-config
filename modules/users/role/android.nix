@@ -16,7 +16,6 @@ let
 in
 {
   config = mkIf (elem role config.extra.user."${user}".roles) {
-    programs.adb.enable = true;
     users.users."${user}".extraGroups = [
       "adbusers"
       "dialout"
@@ -25,6 +24,7 @@ in
 
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
+        android-tools
         brotli
         bsdiff
         heimdall-gui
