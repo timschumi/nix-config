@@ -9,7 +9,6 @@
   nix = {
     settings = {
       experimental-features = [
-        "ca-derivations"
         "nix-command"
         "flakes"
       ];

@@ -4,6 +4,7 @@
   modules = [
     (inputs.self + "/fragments/comma.nix")
     (inputs.self + "/fragments/firefox.nix")
+    (inputs.self + "/fragments/lix.nix")
     (inputs.self + "/fragments/plasma.nix")
     (inputs.self + "/fragments/pipewire.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
