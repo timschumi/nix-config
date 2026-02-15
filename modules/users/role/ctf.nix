@@ -139,7 +139,7 @@ in
           wget
           whois
           winetricks
-          wineWowPackages.staging
+          wineWow64Packages.staging
           wireguard-tools
           wireshark
           wstunnel
