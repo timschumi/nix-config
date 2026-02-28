@@ -28,7 +28,7 @@ in
         with pkgs;
         [
           aflplusplus
-          angr-management
+          #angr-management
           apktool
           ascii
           avalonia-ilspy
@@ -104,7 +104,7 @@ in
           proxychains-ng
           (python3.withPackages (
             p: with p; [
-              angr
+              #angr
               ropper
               standard-telnetlib
             ]
