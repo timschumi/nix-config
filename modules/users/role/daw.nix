@@ -18,8 +18,7 @@ in
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
         audacity
-        # CMake 3.5 failure
-        #lmms
+        lmms
         furnace
       ];
     };

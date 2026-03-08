@@ -28,6 +28,7 @@ in
         with pkgs;
         [
           aflplusplus
+          # FIXME: pyqodeng-angr broken. (needs pyqode-qt)
           #angr-management
           apktool
           ascii
@@ -80,7 +81,7 @@ in
           hashcat
           hashcat-utils
           honggfuzz
-          # FIXME: libffi is broken
+          # FIXME: libffi broken.
           #hopper
           httptunnel
           iaito
@@ -104,13 +105,14 @@ in
           proxychains-ng
           (python3.withPackages (
             p: with p; [
+              # FIXME: broken. (requires setuptools-rust)
               #angr
               ropper
               standard-telnetlib
             ]
           ))
           radare2
-          # CMake 3.5 failure
+          # FIXME: broken.
           #retdec
           rizin
           ropgadget
