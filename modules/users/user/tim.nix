@@ -26,6 +26,7 @@ in
 
       xdg.userDirs = {
         enable = true;
+        setSessionVariables = true;
       };
       xdg.configFile."nixpkgs/config.nix".text = "{ allowUnfree = true; }";
 
@@ -58,6 +59,7 @@ in
       programs.git = {
         enable = true;
         lfs.enable = true;
+        signing.format = null;
         settings = {
           user = {
             name = "Tim Schumacher";
