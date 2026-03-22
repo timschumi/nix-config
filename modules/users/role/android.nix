@@ -33,5 +33,9 @@ in
         sdat2img
       ];
     };
+
+    services.udev.packages = with pkgs; [
+      mtkclient
+    ];
   };
 }
