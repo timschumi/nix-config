@@ -7,5 +7,7 @@ let
     };
 in
 {
+  brokenOn = importWithInherit ./brokenOn.nix;
+  emptyDirectory = importWithInherit ./emptyDirectory.nix;
   enumerateNixFiles = importWithInherit ./enumerateNixFiles.nix;
 }
