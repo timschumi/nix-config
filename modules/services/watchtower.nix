@@ -37,7 +37,7 @@ in
 
   config = mkIf config.extra.services.watchtower.enable {
     virtualisation.oci-containers.containers."watchtower-nix" = {
-      image = "docker.io/containrrr/watchtower:latest";
+      image = "docker.io/timschumi/watchtower:latest";
       volumes = [
         "/var/run/docker.sock:/var/run/docker.sock:rw"
       ]
@@ -56,7 +56,7 @@ in
     };
 
     virtualisation.oci-containers.containers."watchtower-unscoped" = {
-      image = "docker.io/containrrr/watchtower:latest";
+      image = "docker.io/timschumi/watchtower:latest";
       volumes = [
         "/var/run/docker.sock:/var/run/docker.sock:rw"
       ]
