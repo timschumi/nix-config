@@ -42,7 +42,10 @@
         boot.kernelModules = [ ];
         boot.extraModulePackages = [ ];
 
-        fileSystems."/".device = lib.mkForce "/dev/disk/by-uuid/2598aea4-bfe9-433e-82fa-7bae4ba6ac45";
+        fileSystems."/" = {
+          device = lib.mkForce "/dev/disk/by-uuid/2598aea4-bfe9-433e-82fa-7bae4ba6ac45";
+          fsType = "ext4";
+        };
 
         swapDevices = [ ];
 

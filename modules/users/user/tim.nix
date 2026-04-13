@@ -42,6 +42,8 @@ in
         enable = true;
         defaultEditor = true;
         vimAlias = true;
+        withRuby = false;
+        withPython3 = false;
         plugins = with pkgs.vimPlugins; [
           {
             plugin = vim-lastplace;
@@ -49,6 +51,7 @@ in
               let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
               let g:lastplace_ignore_buftype = "quickfix,nofile,help"
             '';
+            type = "viml";
           }
         ];
         extraConfig = ''
