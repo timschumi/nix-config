@@ -42,6 +42,7 @@
                   "dev-php"
                   "dev-py"
                   "dev-rust"
+                  "framework-dsp"
                   "hwtest"
                   "rip"
                 ];
