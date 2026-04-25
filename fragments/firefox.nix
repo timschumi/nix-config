@@ -12,6 +12,7 @@
   home-manager.users.tim = {
     programs.firefox = {
       enable = true;
+      configPath = ".mozilla/firefox";
       profiles = {
         main = {
           isDefault = true;

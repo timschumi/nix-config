@@ -13,6 +13,7 @@ let
   inherit (builtins) elem;
   inherit (inputs.nixpkgs.lib) mkIf;
   inherit (inputs.nixpkgs.lib.lists) optionals;
+  inherit (inputs.self.lib) brokenOn;
 in
 {
   config = mkIf (elem role config.extra.user."${user}".roles) {
@@ -29,7 +30,7 @@ in
         [
           aflplusplus
           # FIXME: pyqodeng-angr broken. (needs pyqode-qt)
-          #angr-management
+          (brokenOn true angr-management)
           apktool
           ascii
           avalonia-ilspy
@@ -43,16 +44,18 @@ in
           capstone
           checksec
           coreboot-utils
-          (cutter.withPlugins (
-            p: with p; [
-              jsdec
-              rz-ghidra
-              sigdb
-            ]
+          (brokenOn true (
+            cutter.withPlugins (
+              p: with p; [
+                jsdec
+                rz-ghidra
+                sigdb
+              ]
+            )
           ))
           delsum
           dex2jar
-          diffoscope
+          (brokenOn true diffoscope)
           dig
           dnscrypt-proxy
           elfutils
@@ -80,9 +83,9 @@ in
           ))
           hashcat
           hashcat-utils
-          honggfuzz
+          (brokenOn true honggfuzz)
           # FIXME: libffi broken.
-          #hopper
+          (brokenOn true hopper)
           httptunnel
           iaito
           ida-free
@@ -105,15 +108,13 @@ in
           proxychains-ng
           (python3.withPackages (
             p: with p; [
-              # FIXME: broken. (requires setuptools-rust)
-              #angr
+              (brokenOn true angr)
               ropper
               standard-telnetlib
             ]
           ))
           radare2
-          # FIXME: broken.
-          #retdec
+          (brokenOn true retdec)
           rizin
           ropgadget
           scanmem

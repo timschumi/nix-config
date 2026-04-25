@@ -3,14 +3,19 @@
   pkgs,
   ...
 }:
+let
+  inherit (inputs.self.lib) brokenOn;
+in
 {
   home-manager.users.tim = {
     home.packages = with pkgs; [
-      (lutris.override {
-        extraPkgs = pkgs: [
-          wine-staging
-        ];
-      })
+      (brokenOn true (
+        lutris.override {
+          extraPkgs = pkgs: [
+            wine-staging
+          ];
+        }
+      ))
     ];
   };
 
