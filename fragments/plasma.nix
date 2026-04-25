@@ -66,6 +66,12 @@
     ];
   };
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+  ];
+
   # Substitute lacking KIO functions with GVFS (in particular support for mounting avahi/dnssd/webdav).
   services.gvfs.enable = true;
   services.gvfs.package = pkgs.gvfs.override {
