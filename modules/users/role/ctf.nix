@@ -29,14 +29,13 @@ in
         with pkgs;
         [
           aflplusplus
-          # FIXME: pyqodeng-angr broken. (needs pyqode-qt)
           (brokenOn true angr-management)
           apktool
           ascii
           avalonia-ilspy
           bettercap
           binaryninja-personal
-          binwalk
+          (brokenOn true binwalk)
           biodiff
           bkcrack
           burpsuite
@@ -44,14 +43,12 @@ in
           capstone
           checksec
           coreboot-utils
-          (brokenOn true (
-            cutter.withPlugins (
-              p: with p; [
-                jsdec
-                rz-ghidra
-                sigdb
-              ]
-            )
+          (cutter.withPlugins (
+            p: with p; [
+              jsdec
+              rz-ghidra
+              sigdb
+            ]
           ))
           delsum
           dex2jar
@@ -75,7 +72,7 @@ in
               ghidra-delinker-extension
               ghidra-firmware-utils
               ghidra-golanganalyzerextension
-              ghidraninja-ghidra-scripts
+              (brokenOn true ghidraninja-ghidra-scripts)
               kaiju
               ret-sync
               wasm
@@ -83,9 +80,8 @@ in
           ))
           hashcat
           hashcat-utils
-          (brokenOn true honggfuzz)
-          # FIXME: libffi broken.
-          (brokenOn true hopper)
+          honggfuzz
+          hopper
           httptunnel
           iaito
           ida-free

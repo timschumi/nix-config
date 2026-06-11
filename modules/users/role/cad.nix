@@ -12,7 +12,6 @@
 let
   inherit (builtins) elem;
   inherit (inputs.nixpkgs.lib) mkIf;
-  inherit (inputs.self.lib) brokenOn;
 in
 {
   config = mkIf (elem role config.extra.user."${user}".roles) {
