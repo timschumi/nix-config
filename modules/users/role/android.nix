@@ -13,15 +13,23 @@ let
   inherit (builtins) elem filter;
   inherit (inputs.nixpkgs.lib) mkIf;
   inherit (inputs.nixpkgs.lib.strings) concatLines hasInfix splitString;
+
+  # udev: Tag debug appliance nodes as xaccess-debug-appliance (#42780)
+  extraUaccessRules = pkgs.writeTextFile {
+    name = "extra-uaccess-rules";
+    text = ''
+      # Made available via xaccess additionally to support scenarios like headless testing machines.
+      ENV{ID_DEBUG_APPLIANCE}=="?*", TAG+="xaccess-debug-appliance" 
+    '';
+    destination = "/etc/udev/rules.d/72-uaccess-extra.rules";
+  };
+
 in
 {
   config = mkIf (elem role config.extra.user."${user}".roles) {
-    users.groups.adbusers = { };
-    users.users."${user}".extraGroups = [
-      "adbusers"
-      "dialout"
-      "plugdev"
-    ];
+    users.users."${user}" = {
+      extraDeviceAccess = [ "debug-appliance" ];
+    };
 
     home-manager.users."${user}" = {
       home.packages = with pkgs; [
@@ -36,13 +44,8 @@ in
     };
 
     services.udev.packages = with pkgs; [
+      extraUaccessRules
       mtkclient
     ];
-
-    services.udev.extraRules = ''
-      # ID_DEBUG_APPLIANCE is set up by systemd's 70-uaccess.rules. We can rely on this because we are 99-local.rules.
-      # Emulate the old android-udev-rules behavior for those, since uaccess does not work for remote sessions.
-      ENV{ID_DEBUG_APPLIANCE}=="?*", MODE="0660", GROUP="adbusers", SYMLINK+="android", SYMLINK+="android%n"
-    '';
   };
 }
