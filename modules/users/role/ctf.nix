@@ -75,7 +75,7 @@ in
               (brokenOn true ghidraninja-ghidra-scripts)
               kaiju
               ret-sync
-              wasm
+              (brokenOn true wasm)
             ]
           ))
           hashcat
