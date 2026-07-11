@@ -11,6 +11,7 @@
       "x86_64-windows"
     ])
     (inputs.self + "/fragments/firefox.nix")
+    (inputs.self + "/fragments/hw-cpu-alderlake.nix")
     (inputs.self + "/fragments/libvirt.nix")
     (inputs.self + "/fragments/lutris.nix")
     (inputs.self + "/fragments/opentabletdriver.nix")
