@@ -8,6 +8,7 @@
       "i686-linux"
       "x86_64-linux"
     ])
+    (inputs.self + "/fragments/hw-cpu-a720.nix")
     (inputs.self + "/fragments/hw-gpu-nvidia.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
 
@@ -66,8 +67,6 @@
         };
 
         swapDevices = [ ];
-
-        nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 
         boot.loader.systemd-boot.enable = true;
         boot.loader.efi.canTouchEfiVariables = true;
