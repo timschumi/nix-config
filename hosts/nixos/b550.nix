@@ -12,6 +12,7 @@
     ])
     (inputs.self + "/fragments/firefox.nix")
     (inputs.self + "/fragments/gsr.nix")
+    (inputs.self + "/fragments/hw-gpu-amd.nix")
     (inputs.self + "/fragments/libvirt.nix")
     (inputs.self + "/fragments/lutris.nix")
     (inputs.self + "/fragments/opentabletdriver.nix")
@@ -104,16 +105,6 @@
 
         networking.hostName = "b550";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNQTrNEOn3IXn0kwUk+CzVsaMRzTV/NKaD9Ni6KcK1+";
-
-        hardware.graphics = {
-          enable = true;
-          enable32Bit = true;
-          extraPackages = with pkgs; [
-            rocmPackages.clr.icd
-          ];
-          extraPackages32 = with pkgs.pkgsi686Linux; [
-          ];
-        };
 
         nix = {
           settings = {

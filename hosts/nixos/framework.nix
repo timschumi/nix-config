@@ -12,6 +12,7 @@
     ])
     (inputs.self + "/fragments/firefox.nix")
     (inputs.self + "/fragments/hw-cpu-alderlake.nix")
+    (inputs.self + "/fragments/hw-gpu-intel.nix")
     (inputs.self + "/fragments/libvirt.nix")
     (inputs.self + "/fragments/lutris.nix")
     (inputs.self + "/fragments/opentabletdriver.nix")
@@ -106,18 +107,6 @@
 
         networking.hostName = "framework";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBsX/D+lYIOI+88Cp3RCYJmNhPdJVckb1K5XBC+hFbrX";
-
-        hardware.graphics = {
-          enable = true;
-          enable32Bit = true;
-          extraPackages = with pkgs; [
-            intel-compute-runtime
-            intel-media-driver
-          ];
-          extraPackages32 = with pkgs.pkgsi686Linux; [
-            intel-media-driver
-          ];
-        };
 
         nix = {
           settings = {

@@ -4,6 +4,7 @@
   modules = [
     (inputs.self + "/fragments/comma.nix")
     (inputs.self + "/fragments/firefox.nix")
+    (inputs.self + "/fragments/hw-gpu-intel.nix")
     (inputs.self + "/fragments/lix.nix")
     (inputs.self + "/fragments/plasma.nix")
     (inputs.self + "/fragments/pipewire.nix")
@@ -75,18 +76,6 @@
 
         networking.hostName = "wallace";
         age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJsrXHfPy8biXpDJBwSt9dXpIC/c+q3SeYI6ewRYZsA";
-
-        hardware.graphics = {
-          enable = true;
-          enable32Bit = true;
-          extraPackages = with pkgs; [
-            intel-compute-runtime
-            intel-media-driver
-          ];
-          extraPackages32 = with pkgs.pkgsi686Linux; [
-            intel-media-driver
-          ];
-        };
 
         nix = {
           settings = {
