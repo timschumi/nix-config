@@ -8,6 +8,7 @@
       "i686-linux"
       "x86_64-linux"
     ])
+    (inputs.self + "/fragments/hw-gpu-nvidia.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
 
     (
