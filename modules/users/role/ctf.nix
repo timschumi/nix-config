@@ -35,7 +35,7 @@ in
           avalonia-ilspy
           bettercap
           binaryninja-personal
-          (brokenOn true binwalk)
+          binwalk
           biodiff
           bkcrack
           burpsuite
@@ -52,7 +52,7 @@ in
           ))
           delsum
           dex2jar
-          (brokenOn true diffoscope)
+          diffoscope
           dig
           dnscrypt-proxy
           elfutils
@@ -72,7 +72,7 @@ in
               ghidra-delinker-extension
               ghidra-firmware-utils
               ghidra-golanganalyzerextension
-              (brokenOn true ghidraninja-ghidra-scripts)
+              ghidraninja-ghidra-scripts
               kaiju
               ret-sync
               (brokenOn true wasm)
@@ -94,7 +94,8 @@ in
           loadlibrary
           ltrace
           minimodem
-          mitmproxy
+          # FIXME: Waiting on unpinning deps.
+          (brokenOn true mitmproxy)
           nasm
           nmap
           ngrok
