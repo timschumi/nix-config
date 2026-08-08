@@ -29,6 +29,8 @@ in
         with pkgs;
         [
           aflplusplus
+          # FIXME: pyqodeng: ModuleNotFoundError: No module named 'pkg_resources'
+          # FIXME: binsync: module 'pycparser' has no attribute 'ply'
           (brokenOn true angr-management)
           apktool
           ascii
@@ -75,6 +77,7 @@ in
               ghidraninja-ghidra-scripts
               kaiju
               ret-sync
+              # FIXME: Broken due to Ghidra upgrade.
               (brokenOn true wasm)
             ]
           ))
@@ -94,8 +97,7 @@ in
           loadlibrary
           ltrace
           minimodem
-          # FIXME: Waiting on unpinning deps.
-          (brokenOn true mitmproxy)
+          mitmproxy
           nasm
           nmap
           ngrok
@@ -105,12 +107,14 @@ in
           proxychains-ng
           (python3.withPackages (
             p: with p; [
+              # FIXME: angr requires setuptools-rust to build
               (brokenOn true angr)
               ropper
               standard-telnetlib
             ]
           ))
           radare2
+          # FIXME: keystone configuration fails
           (brokenOn true retdec)
           rizin
           ropgadget

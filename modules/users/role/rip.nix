@@ -12,6 +12,7 @@
 let
   inherit (builtins) elem;
   inherit (inputs.nixpkgs.lib) mkIf;
+  inherit (inputs.self.lib) brokenOn;
 in
 {
   config = mkIf (elem role config.extra.user."${user}".roles) {
@@ -20,7 +21,8 @@ in
         cdparanoia
         ffmpeg-full
         freac
-        makemkv
+        # FIXME: Web server broken.
+        (brokenOn true makemkv)
         picard
       ];
 
