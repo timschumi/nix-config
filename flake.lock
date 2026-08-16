@@ -182,11 +182,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786031233,
-        "narHash": "sha256-TIDlLTLI1/pB7IqgjzcKQjpODQsZE2oII4XGG9B6KjI=",
+        "lastModified": 1786826571,
+        "narHash": "sha256-nNqmXIFmESRnU91KARtiekSox0+o+E3AS0d1TuUQ/9o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7834e82588860aaf780cec1366524456a70898d7",
+        "rev": "c8058ecc1329a71a3c99c4d0353dba4009a66152",
         "type": "github"
       },
       "original": {
@@ -202,11 +202,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785650611,
-        "narHash": "sha256-q4kR7g+pCcz6NASvoVPYu+CWWUurX03wogtBqGmR4h0=",
+        "lastModified": 1786852476,
+        "narHash": "sha256-IM5CYtf86W4w8eUPpKcY/LpdHElmVBtJhaKnoTKxZEA=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "dbc756c9d7287de19b3e0e38c928c47510d42c3e",
+        "rev": "c7962dc97b45129df8d751bedaf37beb5a17706e",
         "type": "github"
       },
       "original": {
@@ -217,11 +217,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785967620,
-        "narHash": "sha256-IItrdb7Puk05RqOBWZYFC5X6Wl1sJmCfh5MWVHw5iMM=",
+        "lastModified": 1786599213,
+        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b7c2ada94fe99c15b0dbcf4d11fd7850b957a436",
+        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
         "type": "github"
       },
       "original": {
@@ -256,11 +256,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786221489,
-        "narHash": "sha256-cm3e1A7byPry9B5WN8hPZ6AsqWbdbxuyo3E5yj+akrU=",
+        "lastModified": 1786881147,
+        "narHash": "sha256-SP3a7a3nENJVeZVyLYo8aJXBoCQPSlH0F4+pcYUVpX0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "325373d9baa145ea56b8d657fe06354c1dabb0b1",
+        "rev": "ae51083f105be0ec4a2ff98ca246a4899bb8fe92",
         "type": "github"
       },
       "original": {
@@ -342,11 +342,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786118393,
-        "narHash": "sha256-BE+p7rR4sedjvX6/AExZ3xV+1vPP1uESmAtF/jrpLlE=",
+        "lastModified": 1786844561,
+        "narHash": "sha256-zifexejCUDoV3ly9FZIaxQSsNdTIJfYeJtcv+s/UCn4=",
         "owner": "SerenityOS",
         "repo": "serenity",
-        "rev": "93af8693d6868799635ff0bee2b7ca30746f39a9",
+        "rev": "70f15f95d885dad6548af398ba992f8c92bd51b7",
         "type": "github"
       },
       "original": {
