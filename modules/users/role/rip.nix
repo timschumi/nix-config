@@ -21,8 +21,7 @@ in
         cdparanoia
         ffmpeg-full
         freac
-        # FIXME: Web server broken.
-        (brokenOn true makemkv)
+        makemkv
         picard
       ];
 
