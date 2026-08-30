@@ -59,6 +59,7 @@
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIO5h6N1XE2wls4aqdzzpnPgIq7XlPwz/xMYxHgu5tduhAAAABHNzaDo= tim@yubikey"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICfiExYrWTfGtNn+2+vPYplnWgJeRLmSifc+aEgPNMJH tim@p2520la"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOpHDHOvHS88FMuC3vapC7202aXJ+Y8xWefLeB5z+hZ/ tim@fogos"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKECz+CHK3qNNA9pnm42gB+5dbhlh3swZxUPFxbCVRl0 tim@darwin (macOS)"
     ];
   };
 
