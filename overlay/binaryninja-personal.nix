@@ -4,14 +4,27 @@
       finalAttrs: previousAttrs: {
         pname = "binaryninja-personal";
 
-        src = final.requireFile {
-          name = "binaryninja_linux_${finalAttrs.version}_personal.zip";
-          url = "https://portal.binary.ninja";
-          hash = "sha256-NSfNlaUD0bYfC8AcWAGQw4fsUFCdsEIqwOYxFDLmR8g=";
-        };
+        src = final.requireFile (
+          {
+            url = "https://portal.binary.ninja";
+          }
+          // {
+            x86_64-linux = {
+              name = "binaryninja_linux_${finalAttrs.version}_personal.zip";
+              hash = "sha256-OOuY5Pw6I5iL3CrDDEPDj2UysjD2ZlADAw7L+SGVRMc=";
+            };
+            aarch64-linux = {
+              name = "binaryninja_linux-arm_${finalAttrs.version}_personal.zip";
+              hash = "sha256-u/1r7fmqgpDJ5NH8qLF7BrjdVYrYPndPPx72CnnnOWs=";
+            };
+          }
+          .${final.stdenv.hostPlatform.system}
+        );
 
         buildInputs = previousAttrs.buildInputs ++ [
+          final.libuuid.lib
           final.openssl
+          final.sqlite.out
         ];
 
         # PySide6 depends on the Qt6 libraries in the main directory,
