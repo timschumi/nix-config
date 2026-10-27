@@ -45,13 +45,13 @@ in
           capstone
           checksec
           coreboot-utils
-          (cutter.withPlugins (
+          (brokenOn true (cutter.withPlugins (
             p: with p; [
               jsdec
-              rz-ghidra
+              (brokenOn true rz-ghidra)
               sigdb
             ]
-          ))
+          )))
           delsum
           dex2jar
           diffoscope
@@ -86,7 +86,7 @@ in
           honggfuzz
           hopper
           httptunnel
-          iaito
+          (brokenOn true iaito)
           ida-free
           imagemagick
           imhex
