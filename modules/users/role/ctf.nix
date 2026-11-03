@@ -29,9 +29,7 @@ in
         with pkgs;
         [
           aflplusplus
-          # FIXME: pyqodeng: ModuleNotFoundError: No module named 'pkg_resources'
-          # FIXME: binsync: module 'pycparser' has no attribute 'ply'
-          (brokenOn true angr-management)
+          angr-management
           apktool
           ascii
           avalonia-ilspy
@@ -45,16 +43,20 @@ in
           capstone
           checksec
           coreboot-utils
-          (brokenOn true (cutter.withPlugins (
-            p: with p; [
-              jsdec
-              (brokenOn true rz-ghidra)
-              sigdb
-            ]
-          )))
+          # FIXME: Broken on Qt 6.12
+          (brokenOn true (
+            cutter.withPlugins (
+              p: with p; [
+                jsdec
+                rz-ghidra
+                sigdb
+              ]
+            )
+          ))
           delsum
           dex2jar
-          diffoscope
+          # FIXME: Broken due to libguestfs/fuse2
+          (brokenOn true diffoscope)
           dig
           dnscrypt-proxy
           elfutils
@@ -86,6 +88,7 @@ in
           honggfuzz
           hopper
           httptunnel
+          # FIXME: Broken on Qt 6.12
           (brokenOn true iaito)
           ida-free
           imagemagick
@@ -107,8 +110,7 @@ in
           proxychains-ng
           (python3.withPackages (
             p: with p; [
-              # FIXME: angr requires setuptools-rust to build
-              (brokenOn true angr)
+              angr
               ropper
               standard-telnetlib
             ]
