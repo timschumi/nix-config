@@ -10,6 +10,7 @@
     ])
     (inputs.self + "/fragments/hw-cpu-a720.nix")
     (inputs.self + "/fragments/hw-gpu-nvidia.nix")
+    (inputs.self + "/fragments/libvirt.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
 
     (

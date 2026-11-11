@@ -8,12 +8,9 @@
       "i686-linux"
       "x86_64-linux"
     ])
-    (inputs.self + "/fragments/firefox.nix")
+    (inputs.self + "/fragments/hw-cpu-a720.nix")
     (inputs.self + "/fragments/libvirt.nix")
-    (inputs.self + "/fragments/plasma.nix")
-    (inputs.self + "/fragments/pipewire.nix")
     (inputs.self + "/fragments/variant-desktop.nix")
-    (inputs.self + "/fragments/yubikey.nix")
 
     (
       { ... }:
@@ -24,15 +21,6 @@
               tim = {
                 enable = true;
                 roles = [
-                  "android"
-                  "cad"
-                  "daw"
-                  "dev-cpp"
-                  "dev-dotnet"
-                  "dev-java"
-                  "dev-php"
-                  "dev-py"
-                  "dev-rust"
                   "hwtest"
                 ];
               };
@@ -65,12 +53,12 @@
         boot.extraModulePackages = [ ];
 
         fileSystems."/" = {
-          device = "/dev/disk/by-uuid/150f7b2c-2e4b-4e0c-93db-1538e47ddb62";
+          device = "/dev/disk/by-uuid/c92f8ab8-66dd-45a7-b177-02f74b8bf28f";
           fsType = "ext4";
         };
 
         fileSystems."/boot" = {
-          device = "/dev/disk/by-uuid/BBE7-3CF3";
+          device = "/dev/disk/by-uuid/5929-1577";
           fsType = "vfat";
           options = [
             "fmask=0077"
@@ -78,9 +66,7 @@
           ];
         };
 
-        swapDevices = [ ];
-
-        nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
+        swapDevices = [ { device = "/dev/disk/by-uuid/8fe512b9-0ae8-4799-a33a-d6bffbefef4c"; } ];
 
         boot.loader.systemd-boot.enable = true;
         boot.loader.efi.canTouchEfiVariables = true;
@@ -89,7 +75,7 @@
         boot.kernelPackages = pkgs.linuxPackages_latest;
 
         networking.hostName = "orion";
-        age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQHgBITJBi2Ajj3to/Ee3BJwPez62QIqLWEK3xqbO/6";
+        age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPNoq1Wz6zBBTtGqqL+DNVl1k/qkC9gKsRAz/0Run0OB";
 
         nix = {
           settings = {
