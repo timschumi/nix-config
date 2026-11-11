@@ -43,7 +43,6 @@ in
           capstone
           checksec
           coreboot-utils
-          # FIXME: Broken on Qt 6.12
           (brokenOn true (
             cutter.withPlugins (
               p: with p; [
@@ -55,8 +54,7 @@ in
           ))
           delsum
           dex2jar
-          # FIXME: Broken due to libguestfs/fuse2
-          (brokenOn true diffoscope)
+          diffoscope
           dig
           dnscrypt-proxy
           elfutils
@@ -73,8 +71,10 @@ in
           (ghidra.withExtensions (
             p: with p; [
               findcrypt
-              ghidra-delinker-extension
-              ghidra-firmware-utils
+              # FIXME: Broken due to Ghidra upgrade.
+              (brokenOn true ghidra-delinker-extension)
+              # FIXME: Broken due to Ghidra upgrade.
+              (brokenOn true ghidra-firmware-utils)
               ghidra-golanganalyzerextension
               ghidraninja-ghidra-scripts
               kaiju
@@ -88,8 +88,7 @@ in
           honggfuzz
           hopper
           httptunnel
-          # FIXME: Broken on Qt 6.12
-          (brokenOn true iaito)
+          iaito
           ida-free
           imagemagick
           imhex
@@ -100,7 +99,8 @@ in
           loadlibrary
           ltrace
           minimodem
-          mitmproxy
+          # FIXME: Broken due to eMudhra.
+          (brokenOn true mitmproxy)
           nasm
           nmap
           ngrok
@@ -122,7 +122,8 @@ in
           ropgadget
           scanmem
           seclists
-          shadowsocks-rust
+          # FIXME: Requires AWS-LC.
+          (brokenOn true shadowsocks-rust)
           shadowsocks-v2ray-plugin
           sleuthkit
           socat
@@ -148,7 +149,8 @@ in
           wineWow64Packages.staging
           wireguard-tools
           wireshark
-          wstunnel
+          # FIXME: Requires AWS-LC.
+          (brokenOn true wstunnel)
           xournalpp
           yt-dlp
         ]
