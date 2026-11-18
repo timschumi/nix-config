@@ -99,8 +99,7 @@ in
           loadlibrary
           ltrace
           minimodem
-          # FIXME: Broken due to eMudhra.
-          (brokenOn true mitmproxy)
+          mitmproxy
           nasm
           nmap
           ngrok
@@ -122,8 +121,7 @@ in
           ropgadget
           scanmem
           seclists
-          # FIXME: Requires AWS-LC.
-          (brokenOn true shadowsocks-rust)
+          shadowsocks-rust
           shadowsocks-v2ray-plugin
           sleuthkit
           socat
@@ -149,8 +147,7 @@ in
           wineWow64Packages.staging
           wireguard-tools
           wireshark
-          # FIXME: Requires AWS-LC.
-          (brokenOn true wstunnel)
+          wstunnel
           xournalpp
           yt-dlp
         ]
